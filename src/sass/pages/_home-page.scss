@@ -1,0 +1,134 @@
+.h1-home {
+  text-align: center;
+  font-family: 'alexa-std', sans-serif;
+  font-weight: 400;
+  color: var(--color-yellow1);
+  font-size: calc(1.5vw + 3.5rem);
+  margin: 3rem 0 1.5rem 0;
+  animation: moveInTop 3s ease-out;
+  animation-fill-mode: backwards;
+  position: relative;
+  z-index: 1000;
+  transition: all 0.2s ease-in-out;
+
+  &:first-child::first-letter {
+    font-size: calc(1.5vw + 4.5rem);
+    letter-spacing: -0.35rem;
+  }
+
+  @media only screen and (max-width: 35em) {
+    margin: 3rem 0 0 -7vw;
+    display: flex;
+    flex-direction: column;
+
+    & :last-child {
+      margin-top: 1.5rem;
+      margin-left: 20vw;
+    }
+  }
+}
+
+.home-main {
+  margin-inline: auto;
+}
+
+.h2-home {
+  height: 50vh;
+  width: 90%;
+  margin-top: 5vh;
+  margin-left: 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(max-content, 15vw));
+  grid-template-rows: repeat(4, 3fr) 2fr;
+  grid-template-areas:
+    'one one one one one'
+    '. two two two two'
+    '. . three three three'
+    '. . . four four'
+    '. . . . five';
+  align-items: end;
+  justify-items: start;
+  font-family: 'montag', sans-serif;
+  font-weight: 300;
+  font-size: calc(1vw + 1.6rem);
+  color: #fff;
+  letter-spacing: 0.3rem;
+
+  & :first-child {
+    grid-area: one;
+    font-size: calc(0.5vw + 1.2rem);
+    position: relative;
+    animation: moveInTop 3s ease-out;
+    animation-fill-mode: backwards;
+    z-index: 1000;
+
+    &::before {
+      font-family: sans-serif;
+      font-size: calc(0.5vw + 4rem);
+      line-height: 1;
+      color: hsla(0, 0, 80%, 0.8);
+      content: '\201C';
+      position: absolute;
+      top: -1.5rem;
+      left: -1.4rem;
+      z-index: 1000;
+    }
+  }
+
+  & :nth-child(2) {
+    grid-area: two;
+    animation: moveInLeft 3s ease-out;
+    animation-fill-mode: backwards;
+    z-index: 1000;
+
+    &:first-letter {
+      font-size: calc(1vw + 1.8rem);
+    }
+  }
+
+  & :nth-child(3) {
+    grid-area: three;
+    animation: moveInRight 3s ease-out 0.5s;
+    animation-fill-mode: backwards;
+    z-index: 1000;
+  }
+
+  & :nth-child(4) {
+    grid-area: four;
+    line-height: 2;
+    animation: moveInLeft 3s ease-out 0.75s;
+    animation-fill-mode: backwards;
+    position: relative;
+    z-index: 1000;
+
+    &::after {
+      font-family: sans-serif;
+      font-size: calc(0.5vw + 4rem);
+      line-height: 1;
+      color: hsla(0, 0, 80%, 0.8);
+      content: '\201D';
+      position: absolute;
+      top: 0;
+      right: -1.5rem;
+      z-index: 1000;
+    }
+  }
+
+  & :last-child {
+    margin-left: -1.5rem;
+    grid-area: five;
+    align-self: center;
+    margin-top: -1rem;
+    font-size: calc(0.5vw + 0.8rem);
+    animation: moveInBottom 3s ease-out 1s;
+    animation-fill-mode: backwards;
+    z-index: 1000;
+  }
+}
+
+.rounded-triangle-text {
+  font-family: 'montag', sans-serif;
+  font-weight: 300;
+  margin-top: -1.6rem;
+  z-index: 1000;
+}

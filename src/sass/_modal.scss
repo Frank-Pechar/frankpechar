@@ -1,0 +1,147 @@
+.card-columns {
+  margin: 0 2rem 0 2rem;
+  columns: 2;
+  column-gap: 1.5rem;
+
+  @media only screen and (min-width: 768px) {
+    columns: 3;
+  }
+
+  @media only screen and (min-width: 992px) {
+    columns: 4;
+  }
+}
+
+.card__img {
+  margin-top: 1.5rem;
+  display: inline-block;
+  min-height: 100%;
+  transition: all ease-in-out 0.2s;
+  position: relative;
+  border: solid hsl(0, 0%, 30%);
+  border-width: var(--img-border-width);
+  border-radius: 0.5rem;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+
+  &:before {
+    content: '';
+    position: absolute;
+  }
+
+  &:hover {
+    transform: scale(1.03) translateY(-0.1rem);
+    filter: brightness(108%);
+    box-shadow: 0 0.6rem 0.8rem black;
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    min-height: 100%;
+  }
+}
+
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: #fff;
+  z-index: 10000;
+  overflow: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modalContent {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.modalImg {
+  width: 100%;
+  object-fit: contain;
+  margin-top: 2rem;
+  max-height: 80vh;
+  max-width: 80vw;
+  display: block;
+  transform-origin: top;
+  animation: scale 0.75s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.modalTxt {
+  margin-top: 1em;
+  margin-inline: 2rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.modalNav {
+  margin-top: 1em;
+}
+
+.modalNav .button {
+  padding: 0.5rem 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  background: none;
+  color: rgba(255, 255, 255, 0.5);
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: -4%;
+}
+
+.prevBtn {
+  left: 3rem;
+  transition: all 0.2s;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.nextBtn {
+  right: 3rem;
+  transition: all 0.2s;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.close {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+  top: 1vh;
+  right: 2rem;
+  font-size: 3rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  transition: all 0.2s;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+  }
+}
+
+.modal.appear {
+  opacity: 1;
+  pointer-events: all;
+}

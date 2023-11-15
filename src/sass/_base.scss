@@ -1,0 +1,63 @@
+:root {
+  @include css-variables;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var(--fs-default);
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  background: radial-gradient(
+    circle,
+    var(--color-background) 40%,
+    var(--color-background-dark) 70%
+  );
+  position: relative;
+  font-family: 'roboto', sans-serif;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  z-index: 1;
+}
+
+.body-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  margin-bottom: 3rem;
+}
+
+.footer {
+  @include animated-gradient-mixin;
+  margin-top: auto;
+  padding: 1.5rem;
+  font-family: quiche-sans, sans-serif;
+  font-weight: 400;
+  font-size: 2.1rem;
+  text-align: center;
+  color: var(--color-yellow1);
+  text-shadow: 0 0.2rem 0.2rem var(--color-text-shadow);
+  transition: all 0.2s;
+
+  &:hover {
+    text-shadow: 0 0.4rem 0.4rem var(--color-text-shadow);
+    transform: scale(1.03);
+  }
+}

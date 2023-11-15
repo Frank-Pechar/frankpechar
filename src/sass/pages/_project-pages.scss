@@ -1,0 +1,31 @@
+.projects-page-heading {
+  padding: 2rem 0 1.5rem 0;
+  font-family: quiche-sans, sans-serif;
+  font-size: var(--fs-project-headings);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.2rem;
+  color: var(--color-yellow1);
+  text-shadow: 0 0.2rem 0.3rem var(--color-text-shadow);
+}
+
+@media only screen and (max-width: 90em) {
+  .projects-page-heading:not(.heading-short) {
+    @include project-responsive-headings;
+  }
+}
+
+@media only screen and (max-width: 58em) {
+  .projects-page-heading.heading-short {
+    @include project-responsive-headings;
+  }
+}
+
+.click-img {
+  margin-bottom: 2.5rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--color-yellow1);
+  text-shadow: 0 0.2rem 0.3rem var(--color-text-shadow);
+  font-size: var(--fs-click-image);
+}

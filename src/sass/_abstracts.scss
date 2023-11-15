@@ -1,0 +1,26 @@
+@mixin css-variables {
+  --fs-default: clamp(0.5rem, 1.2vw + 0.2rem, 1.5rem);
+  --fs-project-headings: clamp(1.5rem, 3.2vw + 0.7rem, 2.4rem);
+  --fs-project-heading2: clamp(1.4rem, 2.6vw + 0.5rem, 2rem);
+  --fs-click-image: clamp(0.8rem, 1.5vw + 0.5rem, 1.4rem);
+  --color-background: hsla(252, 100%, 24%, 1);
+  --color-background-light: hsla(252, 100%, 44%, 1);
+  --color-background-dark: hsla(252, 100%, 10%, 1);
+  --color-sun: hsla(48, 100%, 50%, 1);
+  --color-white-1: seashell;
+  --color-gray: #bbafc863;
+  --color-yellow1: hsl(45, 100%, 63%);
+  --color-yellow2: hsl(45, 100%, 48%);
+  --color-text-shadow: hsl(0, 93%, 17%);
+  --color-text-shadow-dk: hsla(0, 93%, 17%, 0.3);
+  --img-border-width: clamp(0.3rem, calc(0.5rem + 0.2vw), 2rem);
+}
+
+@mixin project-responsive-headings {
+  & :last-child {
+    display: block;
+    line-height: 1.4;
+    font-size: var(--fs-project-heading2);
+    font-weight: 300;
+  }
+}
