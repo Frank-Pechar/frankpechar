@@ -791,20 +791,24 @@ main {
   margin-bottom: 1rem;
   font-weight: 900; }
 
-.interests-heading-god {
-  padding-top: 3.5rem;
+.interests-heading {
+  margin-top: 2.5rem;
   font-family: 'tangier', sans-serif;
   font-weight: 300;
-  font-size: 3.3rem;
+  font-size: 4rem;
   letter-spacing: 0.1rem;
   text-align: center;
   color: white;
   filter: brightness(1.1);
   text-shadow: 0 0.15rem 0.2rem var(--color-text-shadow);
   transition: all 0.4s; }
-  @media only screen and (max-width: 50em) {
-    .interests-heading-god {
-      margin-top: 7rem; } }
+  .interests-heading :last-child {
+    display: block;
+    margin-top: 1rem;
+    font-size: 3rem; }
+    @media only screen and (max-width: 30rem) {
+      .interests-heading :last-child {
+        margin-top: 3rem; } }
 
 .interests-news {
   margin-inline: auto;
@@ -816,15 +820,15 @@ main {
     font-weight: 400;
     letter-spacing: 0.15rem;
     font-size: 2rem; }
-  .interests-news__henry-quote {
+  .interests-news__quote {
     font-size: 1.6rem;
     font-style: italic;
     font-weight: 300;
     letter-spacing: 0.1rem;
     color: var(--color-tertiary-dark); }
-  .interests-news__henry-name {
+  .interests-news__quote-name {
     margin: 1.5rem 0 2.5rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: var(--color-tertiary-dark); }
   .interests-news__title2 {
     margin-bottom: 1.5rem;
@@ -940,28 +944,12 @@ main {
   color: var(--color-white-1);
   text-shadow: 0rem 0.15rem 0.15rem var(--color-text-shadow); }
 
-.interests-footer {
+.interests-spirit-footer {
   font-family: 'tangier', sans-serif;
   font-weight: 300;
   font-size: 2.6rem;
   letter-spacing: 0.1rem;
   color: white; }
-
-@media only screen and (max-width: 22.5em) {
-  .interests-heading-god {
-    font-size: 2.8rem; }
-  .interests-news__title {
-    font-size: 1.8rem; }
-  .interests-news__henry-quote, .interests-news__henry-name, .interests-news__title2 {
-    font-size: 1.4rem; }
-  .interests-news__title3 {
-    font-size: 1.6rem; }
-  .interests-news__link {
-    font-size: 1.3rem; }
-  .interests-myvideo__title1 {
-    font-size: 1.3rem; }
-  .interests-poetry {
-    font-size: 2.2rem; } }
 
 hr {
   width: 20%;
@@ -969,6 +957,10 @@ hr {
   height: 0.3rem;
   margin: 4rem auto 4rem auto;
   border: none; }
+
+.hr-short {
+  width: 10%;
+  margin: 2rem auto 2rem auto; }
 
 .card-columns {
   margin: 0 2rem 0 2rem;
