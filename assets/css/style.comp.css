@@ -698,6 +698,11 @@ main {
   margin-top: -1.6rem;
   z-index: 1000; }
 
+.rounded-triangle--1 a span:first-of-type {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 1.5; }
+
 .projects-page-heading {
   padding: 2rem 0 1.5rem 0;
   font-family: quiche-sans, sans-serif;
