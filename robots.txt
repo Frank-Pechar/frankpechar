@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: assets/img/digital-fusion-art/
-Disallow: assets/img/images-projects/
-Disallow: assets/img/photo-edits/
-Disallow: assets/img/photo-effects/

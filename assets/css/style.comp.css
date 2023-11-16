@@ -910,6 +910,7 @@ main {
   margin-bottom: 1rem;
   text-align: center;
   font-size: 1.5rem;
+  font-weight: 300;
   color: var(--color-white-1);
   text-shadow: 0rem 0.15rem 0.15rem var(--color-text-shadow); }
 
