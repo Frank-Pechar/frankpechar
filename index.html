@@ -19,7 +19,7 @@
 
   <body class="body body-home">
     <header>
-      <nav class="nav-js"></nav>
+      <div class="nav-js"></div>
       <h1 class="h1-home">
         <span>Portfolio - </span>
         <span>frank pechar</span>
@@ -31,7 +31,7 @@
         <span>Imagination</span>
         <span>Will Take You</span>
         <span>Everywhere</span>
-        <footer>-Albert Einstein</footer>
+        <footer><cite>-Albert Einstein</cite></footer>
       </blockquote>
     </main>
     <div class="background-container">
@@ -52,10 +52,11 @@
         <div class="lg-triangle1"></div>
         <div class="lg-triangle2"></div>
         <div class="lg-triangle3"></div>
-        <div class="rounded-triangle rounded-triangle--1">
+        <div class="rounded-triangle rounded-triangle--1" tabindex="20">
           <a
             class="rounded-triangle-text"
             href="../html-pages/javascript-projects.html"
+            aria-label="JavaScript Projects Page"
           >
             <div>
               <span>J</span><span>S</span>
@@ -65,7 +66,9 @@
         </div>
         <div
           class="rounded-triangle rounded-triangle--2 check"
-          onclick="checkNav()"
+          tabindex="30"
+          role="button"
+          aria-label="Extra Button for Main Navigation"
         >
           <div class="rounded-triangle-text">Menu</div>
         </div>

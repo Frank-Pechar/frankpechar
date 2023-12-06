@@ -54,7 +54,7 @@
   color: #fff;
   letter-spacing: 0.3rem;
 
-  & :first-child {
+  & :first-child:not(cite) {
     grid-area: one;
     font-size: calc(0.5vw + 1.2rem);
     position: relative;
@@ -123,6 +123,12 @@
     animation: moveInBottom 3s ease-out 1s;
     animation-fill-mode: backwards;
     z-index: 1000;
+  }
+}
+
+.rounded-triangle {
+  &:focus {
+    outline: 0.2rem solid white;
   }
 }
 

@@ -5,7 +5,7 @@
   left: 3rem;
   height: 6rem;
   width: 6rem;
-  z-index: 7000;
+  z-index: 5000;
 
   @media only screen and (max-width: 24em) {
     left: 2.5rem;
@@ -24,43 +24,37 @@
       filter: brightness(1.1);
       box-shadow: 0 0rem 1rem 0.4rem var(--color-yellow1);
     }
-    &:focus {
-      outline: 0.2rem solid white;
-    }
   }
 }
 
 .body-home .navigation {
-  animation: appear 2s ease-in-out 3s;
+  animation: appear 2s ease-in-out 2s;
   animation-fill-mode: backwards;
 }
 
 .body-art .navigation,
 .body-web-projects .navigation {
-  animation: appear 2s ease-in-out 0.5s;
+  animation: appear 2s ease-in-out;
   animation-fill-mode: backwards;
 }
 
 .navigation {
-  &__list {
+  &__checkbox {
     display: none;
   }
 
   &__button {
-    background-color: transparent;
+    background-color: rgba(var(--color-white-1), 0.2);
+    @include animated-gradient-mixin;
     position: fixed;
     top: 2.7rem;
     right: 3rem;
     height: 6.5rem;
     width: 6.5rem;
-    border: none;
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
     z-index: 5000;
-    &:focus {
-      outline: 0.2rem solid white;
-    }
 
     @media only screen and (max-width: 24em) {
       right: 2.5rem;
@@ -82,6 +76,7 @@
       var(--color-background-light) 40%
     );
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    z-index: 2000;
 
     @media only screen and (max-width: 24em) {
       height: 5.5rem;
@@ -95,7 +90,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 6000;
+    z-index: 3000;
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
@@ -149,35 +144,22 @@
     }
   }
 
-  &__nav &__list.show {
+  &__checkbox:checked ~ &__nav &__list {
     display: flex;
   }
 
-  &__background.show {
+  &__checkbox:checked ~ &__background {
     transform: scale(80);
     opacity: 1;
   }
 
-  &__nav.show {
+  &__checkbox:checked ~ &__nav {
     opacity: 1;
     display: inline-block;
     width: 100%;
   }
 
-  &__burger {
-    position: fixed;
-    background-color: rgba(var(--color-white-1), 0.2);
-    @include animated-gradient-mixin;
-    top: 2.7rem;
-    right: 3rem;
-    height: 6.5rem;
-    width: 6.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 8000;
-  }
-
-  &__burger-layers {
+  &__icon {
     position: relative;
     margin-top: 3.2rem;
 
@@ -211,36 +193,30 @@
     }
   }
 
-  &__burger:hover &__burger-layers {
+  &__button:hover &__icon {
     filter: brightness(1.2);
   }
 
-  &__burger:hover &__burger-layers::before {
-    filter: brightness(1.2);
-  }
-
-  &__burger:hover span:not(.selected):before {
+  &__button:hover &__icon::before {
     top: -1rem;
-  }
-
-  &__burger:hover &__burger-layers::after {
     filter: brightness(1.2);
   }
 
-  &__burger:hover span:not(.selected)::after {
+  &__button:hover &__icon::after {
     top: 1rem;
+    filter: brightness(1.2);
   }
 
-  &__burger-layers.selected {
+  &__checkbox:checked + &__button &__icon {
     background-color: transparent;
   }
 
-  &__burger-layers.selected::before {
+  &__checkbox:checked + &__button &__icon::before {
     top: 0;
     transform: rotate(135deg);
   }
 
-  &__burger-layers.selected::after {
+  &__checkbox:checked + &__button &__icon::after {
     top: 0;
     transform: rotate(-135deg);
   }

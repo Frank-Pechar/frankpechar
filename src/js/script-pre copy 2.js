@@ -32,11 +32,10 @@ function createNavigation() {
 
   nav.innerHTML = `
   <div class="navigation">
-    <div class="logo">
+    <div class="logo" tabindex="9">
       <a href="../index.html"> 
         <img
           class="logo__img"
-          tabindex="1000"
           src=${src}
           aria-label="Home Page" 
           alt="Logo for Frank Pechar. Abstract. Diagonal angular shapes in perspective from foreground to background.  Dominant color is blue."
@@ -44,52 +43,59 @@ function createNavigation() {
       </a>
     </div>  
 
-    <div
-      class="navigation__button">
-      <div class="navigation__background">&nbsp;</div>
-    </div>
-    <div class="navigation__burger" role="button" aria-label="Main Hamburger        Navigation" aria-controls='navigation-list' aria-expanded="false" tabindex="1">
-      <span class="navigation__burger-layers">&nbsp;</span>
-    </div>
+    <input type="checkbox" class="navigation__checkbox" role="button" aria-expanded="false" id="navi-toggle"/>
+
+    <label for="navi-toggle"     
+      class="navigation__button" role="button" aria-label="Main Hamburger Navigation" aria-controls='navigation-list' aria-expanded="false" tabindex="1" >
+      <span class="navigation__icon" role="button" aria-expanded="false">&nbsp;</span>
+    </label>
+
+    <div class="navigation__background">&nbsp;</div>
 
     <nav id='navigation-list' class="navigation__nav">
       <ul class="navigation__list">
         <li class="navigation__item">
-          <a href="../html-pages/javascript-projects.html" class="navigation__link" tabindex="40"
+          <a href="../html-pages/javascript-projects.html" class="navigation__link" tabindex="2"
             >JavaScript Projects</a
           >
         </li>
         <li class="navigation__item">
-          <a href="../html-pages/react-projects.html" class="navigation__link" tabindex="50"
+          <a href="../html-pages/react-projects.html" class="navigation__link" tabindex="3"
             >React Projects</a
           >
         </li>
         <li class="navigation__item">
-          <a href="../html-pages/css-projects.html" class="navigation__link" tabindex="60"
+          <a href="../html-pages/css-projects.html" class="navigation__link" tabindex="4"
             >CSS Projects</a
           >
         </li>
         <li class="navigation__item">
-          <a href="../html-pages/digital-arts.html" class="navigation__link" tabindex="70"
+          <a href="../html-pages/digital-arts.html" class="navigation__link" tabindex="5"
             >Digital Arts</a
           >
         </li>   
         <li class="navigation__item">
-          <a href="../html-pages/other-interests.html" class="navigation__link" tabindex="80"
+          <a href="../html-pages/other-interests.html" class="navigation__link" tabindex="6"
             >Other Interests</a
           >
         </li>   
         <li class="navigation__item">
-          <a href="../index.html" class="navigation__link" tabindex="90">Home Page</a>
+          <a href="../index.html" class="navigation__link" tabindex="7">Home Page</a>
         </li>
       </ul>
     </nav>
-
   </div>
   `;
 
-  const navBurger = document.querySelector('.navigation__burger');
-  navBurger.focus();
+  //   const navToggle = document.getElementById('navi-toggle');
+  //   navToggle.setAttribute('aria-expanded', 'false');
+  //   navToggle.onclick = function () {
+  //     if (this.getAttribute('aria-expanded') == 'false') {
+  //       this.setAttribute('aria-expanded', 'true');
+  //     } else {
+  //       this.setAttribute('aria-expanded', 'false');
+  //     }
+  //   };
 }
 
 // MODAL CREATION FUNCTION for ART PAGES
@@ -98,13 +104,13 @@ function readyArtModal() {
   const modal = document.querySelector('.modal');
 
   modal.innerHTML = `    
-  <div class="modalContent" role="alertdialog" aria-modal="true">
+  <div class="modalContent">
     <img src="" class="modalImg" />
     <span class="modalTxt"></span>
     <div class="modalNav">
-      <button type="button" class="button prevBtn" aria-label="previous image">&#8592;</button>
-      <button type="button" class="button nextBtn" aria-label="next image">&#8594;</button>
-      <button class="close" aria-label="close">&times;</button>
+      <button type="button" class="button prevBtn">&#8592;</button>
+      <button type="button" class="button nextBtn">&#8594;</button>
+      <button class="close">&times;</button>
     </div>
   </div>
 `;
@@ -120,25 +126,17 @@ function readyArtModal() {
     modalImg.style.animationName = 'none';
   }
 
-  function renderModalImage(image) {
-    modalImg.src = image.src;
+  function animate(i) {
+    modalImg.src = images[i].src;
     modalImg.style.animationName = 'fadeInImg';
-    modalImg.role = 'img';
-    modalImg.alt = image.alt;
-    nextBtn.setAttribute('tabindex', '2');
-    prevBtn.setAttribute('tabindex', '3');
-    close.setAttribute('tabindex', '4');
     modalImg.addEventListener('animationend', onAnimationEnd);
   }
 
-  function animate(i) {
-    renderModalImage(images[i]);
-  }
-
   function imageSliderHandler(image, index) {
+    modalImg.src = image.src;
     modal.classList.add('appear');
-    renderModalImage(image);
-    nextBtn.focus();
+    modalImg.style.animationName = 'fadeInImg';
+    modalImg.addEventListener('animationend', onAnimationEnd);
     let imageIndex = index;
     let next = imageIndex + 1;
     let prev = imageIndex - 1;
@@ -167,23 +165,16 @@ function readyArtModal() {
 
     close.addEventListener('click', () => {
       modal.classList.remove('appear');
-      nextBtn.setAttribute('tabindex', '-1');
-      prevBtn.setAttribute('tabindex', '-1');
-      close.setAttribute('tabindex', '-1');
-      const navBurger = document.querySelector('.navigation__burger');
-      navBurger.focus();
     });
 
     function nextImg() {
       animate(next);
-      nextBtn.focus();
       next++;
       prev = next - 2;
     }
 
     function prevImg() {
       animate(prev);
-      prevBtn.focus();
       prev--;
       next = prev + 2;
     }
@@ -221,16 +212,11 @@ function createProjColorStyles() {
   });
 }
 
-// HAMBURGER MENU FUNCTIONALITY
+// HAMBURGER MENU FUNCTIONALITY WITH ARIA ACCESSIBILITY
 
-const navBurger = document.querySelector('.navigation__burger');
-const navBurgerLayers = document.querySelector('.navigation__burger-layers');
+const checkButton = document.getElementById('navi-toggle');
 const navButton = document.querySelector('.navigation__button');
-const navList = document.querySelector('.navigation__list');
-const navBackground = document.querySelector('.navigation__background');
-const navNav = document.querySelector('.navigation__nav');
-const roundTriangle1 = document.querySelector('.rounded-triangle--1');
-const roundTriangle2 = document.querySelector('.rounded-triangle--2');
+const navIcon = document.querySelector('.navigation__icon');
 
 document.querySelector('.logo').addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.code === 'Space') {
@@ -239,46 +225,41 @@ document.querySelector('.logo').addEventListener('keydown', (e) => {
   }
 });
 
-window.showNav = function (attr = 'false') {
-  navBurger.setAttribute('aria-expanded', attr);
-  navBurgerLayers.classList.toggle('selected');
-  navList.classList.toggle('show');
-  navBackground.classList.toggle('show');
-  navNav.classList.toggle('show');
-  if (document.body.classList.contains('body-home')) {
-    if (attr === 'true') {
-      roundTriangle1.setAttribute('tabindex', '-1');
-      roundTriangle2.setAttribute('tabindex', '-1');
+window.checkNav = function () {
+  checkButton.checked = true;
+  navButton.setAttribute('aria-expanded', 'true');
+  checkButton.setAttribute('aria-expanded', 'true');
+  navIcon.setAttribute('aria-expanded', 'true');
+};
+
+const menuSelectorHandler = function (e) {
+  if (e.key === 'Enter' || e.code === 'Space') {
+    e.preventDefault();
+    if (checkButton.checked) {
+      checkButton.checked = false;
+      navButton.setAttribute('aria-expanded', 'false');
+      checkButton.setAttribute('aria-expanded', 'false');
+      navIcon.setAttribute('aria-expanded', 'false');
     } else {
-      roundTriangle1.setAttribute('tabindex', '20');
-      roundTriangle2.setAttribute('tabindex', '30');
+      checkNav();
     }
-    navBurger.focus();
   }
 };
 
-function menuSelectorHandler(e) {
-  if (e.type === 'click' || e.key === 'Enter' || e.code === 'Space') {
-    e.preventDefault();
-    if (navBurger.getAttribute('aria-expanded') === 'true') {
-      showNav();
-    } else {
-      showNav('true');
-    }
-  }
-}
-
-navBurger.addEventListener('keydown', menuSelectorHandler);
-navBurger.addEventListener('click', menuSelectorHandler);
+navButton.addEventListener('keydown', menuSelectorHandler);
 
 // MAIN MENU CHECK SELECTION FROM HTML MENU TRIANGLE
 // ALSO LINKS TO HOME PAGE AND JAVASCRIPT PROJECTS PAGE
 
 function addHomepageMenuSelectors() {
-  const navTriangleButton = document.querySelector('.rounded-triangle--2');
-
-  navTriangleButton.addEventListener('keydown', menuSelectorHandler);
-  navTriangleButton.addEventListener('click', menuSelectorHandler);
+  document
+    .querySelector('.rounded-triangle--2')
+    .addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.code === 'Space') {
+        e.preventDefault();
+        menuSelectorHandler(e);
+      }
+    });
 
   document
     .querySelector('.rounded-triangle--1')
