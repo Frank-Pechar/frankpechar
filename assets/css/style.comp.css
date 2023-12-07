@@ -572,6 +572,8 @@ main {
   border-radius: 50%;
   cursor: pointer;
   z-index: 8000; }
+  .navigation__burger:focus {
+    outline: 0.2rem solid white; }
 
 .navigation__burger-layers {
   position: relative;

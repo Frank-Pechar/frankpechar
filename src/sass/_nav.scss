@@ -175,6 +175,9 @@
     border-radius: 50%;
     cursor: pointer;
     z-index: 8000;
+    &:focus {
+      outline: 0.2rem solid white;
+    }
   }
 
   &__burger-layers {

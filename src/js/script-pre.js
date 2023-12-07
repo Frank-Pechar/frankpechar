@@ -258,7 +258,12 @@ window.showNav = function (attr = 'false') {
 };
 
 function menuSelectorHandler(e) {
-  if (e.type === 'click' || e.key === 'Enter' || e.code === 'Space') {
+  if (
+    e.type === 'click' ||
+    e.key === 'Enter' ||
+    e.code === 'Space' ||
+    e.key === 'Escape'
+  ) {
     e.preventDefault();
     if (navBurger.getAttribute('aria-expanded') === 'true') {
       showNav();
