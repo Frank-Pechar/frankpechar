@@ -630,7 +630,7 @@ main {
   color: var(--color-yellow1);
   font-size: calc(1.5vw + 3.5rem);
   margin: 3rem 0 1.5rem 0;
-  animation: moveInTop 3s ease-out;
+  animation: moveInTop 3s ease-in-out;
   animation-fill-mode: backwards;
   position: relative;
   z-index: 1000;
@@ -650,76 +650,45 @@ main {
 .home-main {
   margin-inline: auto; }
 
-.h2-home {
+.h2-home,
+.h2b-home {
   height: 50vh;
   width: 90%;
-  margin-top: 5vh;
-  margin-left: 3rem;
+  margin-top: 1vh;
+  margin-left: 1.5rem;
   display: grid;
-  grid-template-columns: repeat(5, minmax(max-content, 15vw));
-  grid-template-rows: repeat(4, 3fr) 2fr;
-  grid-template-areas: 'one one one one one' '. two two two two' '. . three three three' '. . . four four' '. . . . five';
+  grid-template-columns: repeat(3, minmax(max-content, 15vw));
+  grid-template-rows: repeat(3, 3fr);
+  grid-template-areas: 'one one one' '. two two' '. . three';
   align-items: end;
   justify-items: start;
   font-family: 'montag', sans-serif;
   font-weight: 300;
-  font-size: calc(1vw + 1.6rem);
+  font-size: calc(1vw + 2rem);
   color: #fff;
   letter-spacing: 0.3rem; }
-  .h2-home :first-child:not(cite) {
+  .h2-home :first-child,
+  .h2b-home :first-child {
     grid-area: one;
-    font-size: calc(0.5vw + 1.2rem);
-    position: relative;
-    animation: moveInTop 3s ease-out;
+    animation: moveInLeft 3s ease-in-out;
     animation-fill-mode: backwards;
     z-index: 1000; }
-    .h2-home :first-child:not(cite)::before {
-      font-family: sans-serif;
-      font-size: calc(0.5vw + 4rem);
-      line-height: 1;
-      color: rgba(204, 204, 204, 0.8);
-      content: '\201C';
-      position: absolute;
-      top: -1.5rem;
-      left: -1.4rem;
-      z-index: 1000; }
-  .h2-home :nth-child(2) {
+    .h2-home :first-child:first-letter,
+    .h2b-home :first-child:first-letter {
+      font-size: calc(1vw + 2.2rem); }
+  .h2-home :nth-child(2),
+  .h2b-home :nth-child(2) {
     grid-area: two;
-    animation: moveInLeft 3s ease-out;
-    animation-fill-mode: backwards;
-    z-index: 1000; }
-    .h2-home :nth-child(2):first-letter {
-      font-size: calc(1vw + 1.8rem); }
-  .h2-home :nth-child(3) {
-    grid-area: three;
-    animation: moveInRight 3s ease-out 0.5s;
-    animation-fill-mode: backwards;
-    z-index: 1000; }
-  .h2-home :nth-child(4) {
-    grid-area: four;
-    line-height: 2;
-    animation: moveInLeft 3s ease-out 0.75s;
+    animation: moveInRight 3s ease-in-out 0.5s;
     animation-fill-mode: backwards;
     position: relative;
     z-index: 1000; }
-    .h2-home :nth-child(4)::after {
-      font-family: sans-serif;
-      font-size: calc(0.5vw + 4rem);
-      line-height: 1;
-      color: rgba(204, 204, 204, 0.8);
-      content: '\201D';
-      position: absolute;
-      top: 0;
-      right: -1.5rem;
-      z-index: 1000; }
-  .h2-home :last-child {
-    margin-left: -1.5rem;
-    grid-area: five;
-    align-self: center;
-    margin-top: -1rem;
-    font-size: calc(0.5vw + 0.8rem);
-    animation: moveInBottom 3s ease-out 1s;
+  .h2-home :last-child,
+  .h2b-home :last-child {
+    grid-area: three;
+    animation: moveInLeft 3s ease-in-out 0.75s;
     animation-fill-mode: backwards;
+    position: relative;
     z-index: 1000; }
 
 .rounded-triangle:focus {
@@ -732,9 +701,11 @@ main {
   z-index: 1000; }
 
 .rounded-triangle--1 a span:first-of-type {
-  display: block;
-  font-size: 1.8rem;
+  font-family: 'roboto', sans-serif;
   line-height: 1.5; }
+
+.display-none {
+  display: none; }
 
 .projects-page-heading {
   padding: 2rem 0 1.5rem 0;
@@ -843,7 +814,7 @@ main {
   .interests-heading :last-child {
     display: block;
     margin-top: 1rem;
-    font-size: 3rem; }
+    font-size: 2.5rem; }
     @media only screen and (max-width: 30rem) {
       .interests-heading :last-child {
         margin-top: 3rem; } }

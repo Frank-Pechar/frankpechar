@@ -293,4 +293,13 @@ function addHomepageMenuSelectors() {
         window.location.replace('../html-pages/javascript-projects.html');
       }
     });
+
+  const h2Home = document.querySelector('.h2-home');
+  const h2bHome = document.querySelector('.h2b-home');
+  setInterval(swapHomePageMantras, 7000);
+
+  function swapHomePageMantras() {
+    h2Home.classList.toggle('display-none');
+    h2bHome.classList.toggle('display-none');
+  }
 }
