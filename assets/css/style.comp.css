@@ -654,7 +654,6 @@ main {
 .h2b-home {
   height: 50vh;
   width: 90%;
-  margin-top: 1vh;
   margin-left: 1.5rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(max-content, 15vw));
