@@ -580,7 +580,6 @@ main {
   margin-top: 3.2rem; }
   @media only screen and (max-width: 24em) {
     .navigation__burger-layers {
-      margin-top: 3rem;
       margin-right: -0.05rem; } }
   .navigation__burger-layers, .navigation__burger-layers::before, .navigation__burger-layers::after {
     width: 3rem;
@@ -1066,7 +1065,6 @@ hr {
   transition: all 0.2s; }
   .prevBtn:hover, .prevBtn:focus, .prevBtn:active {
     color: rgba(255, 255, 255, 0.6);
-    transform: scale(1.1);
     border-color: rgba(255, 255, 255, 0.8); }
 
 .nextBtn {
@@ -1074,7 +1072,6 @@ hr {
   transition: all 0.2s; }
   .nextBtn:hover, .nextBtn:focus, .nextBtn:active {
     color: rgba(255, 255, 255, 0.6);
-    transform: scale(1.1);
     border-color: rgba(255, 255, 255, 0.8); }
 
 .close {
