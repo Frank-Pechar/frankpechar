@@ -102,8 +102,8 @@ function readyArtModal() {
     <img src="" class="modalImg" />
     <span class="modalTxt"></span>
     <div class="modalNav">
-      <button type="button" class="button prevBtn" aria-label="previous image">&#8592;</button>
-      <button type="button" class="button nextBtn" aria-label="next image">&#8594;</button>
+      <button type="button" class="button prevBtn" aria-label="previous image">&larr;</button>
+      <button type="button" class="button nextBtn" aria-label="next image">&rarr;</button>
       <button class="close" aria-label="close">&times;</button>
     </div>
   </div>
