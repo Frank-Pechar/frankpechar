@@ -204,14 +204,14 @@
     text-shadow: 0rem 0rem 0.5rem var(--color-text-shadow-dk); }
 
 .rounded-triangle--1 {
-  bottom: 14vh;
+  bottom: 12vh;
   left: 31vw; }
   @media only screen and (min-width: 1601px) {
     .rounded-triangle--1 {
       left: 40vw; } }
 
 .rounded-triangle--2 {
-  bottom: 8vh;
+  bottom: 6vh;
   left: 56vw; }
 
 .sun {
@@ -651,12 +651,12 @@ main {
 
 .h2-home,
 .h2b-home {
-  height: 50vh;
+  height: 45vh;
   width: 90%;
   margin-left: 1.5rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(max-content, 15vw));
-  grid-template-rows: repeat(3, 3fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas: 'one one one' '. two two' '. . three';
   align-items: end;
   justify-items: start;

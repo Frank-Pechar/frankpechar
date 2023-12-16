@@ -34,12 +34,12 @@
 
 .h2-home,
 .h2b-home {
-  height: 50vh;
+  height: 45vh;
   width: 90%;
   margin-left: 1.5rem;
   display: grid;
   grid-template-columns: repeat(3, minmax(max-content, 15vw));
-  grid-template-rows: repeat(3, 3fr);
+  grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     'one one one'
     '. two two'
