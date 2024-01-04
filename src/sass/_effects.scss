@@ -1,5 +1,5 @@
-$top-counter: 12vh;
-$left-counter: 10vw;
+$top-counter: 16vh;
+$left-counter: 11vw;
 @for $i from 1 through 9 {
   .sm-triangle#{$i} {
     position: absolute;
@@ -24,9 +24,9 @@ $left-counter: 10vw;
 @for $i from 1 through 3 {
   .lg-triangle#{$i} {
     position: absolute;
-    bottom: calc(-3vh + calc(9vh * #{$i}));
-    width: calc(34rem - calc(#{$i} * 4rem));
-    height: calc(34rem - calc(#{$i} * 4rem));
+    bottom: calc(-4vh + calc(9vh * #{$i}));
+    width: calc(31rem - calc(#{$i} * 4rem));
+    height: calc(31rem - calc(#{$i} * 4rem));
     background-image: linear-gradient(
       0deg,
       hsla(252, 100%, 40%, 0.8) 40%,
@@ -37,13 +37,13 @@ $left-counter: 10vw;
     animation-fill-mode: backwards;
     z-index: calc(40 - #{$i});
     @media only screen and (max-width: 1140px) {
-      left: calc(44vw - calc(#{$i} * 12vw));
+      left: calc(46vw - calc(#{$i} * 12vw));
     }
     @media only screen and (min-width: 1141px) {
-      left: calc(40vw - calc(#{$i} * 6vw));
+      left: calc(42vw - calc(#{$i} * 6vw));
     }
     @media only screen and (min-width: 1801px) {
-      left: calc(50vw - calc(#{$i} * 6vw));
+      left: calc(52vw - calc(#{$i} * 6vw));
     }
   }
 }
