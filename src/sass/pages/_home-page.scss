@@ -1,29 +1,42 @@
 .h1-home {
   text-align: center;
-  font-family: 'alexa-std', sans-serif;
+  font-family: 'quiche-sans', sans-serif;
   font-weight: 400;
+  font-style: normal;
   color: var(--color-yellow1);
-  font-size: calc(1.5vw + 3.5rem);
-  margin: 2.5rem 0 1.5rem 0;
+  font-size: calc(1.5vw + 2rem);
+  font-size: calc(1vw + 2.2rem);
+  margin: 2rem 0 1.5rem 0;
   animation: moveInTop 3s ease-in-out;
   animation-fill-mode: backwards;
   position: relative;
   z-index: 1000;
   transition: all 0.2s ease-in-out;
 
-  &:first-child::first-letter {
-    font-size: calc(1.5vw + 4.5rem);
-    letter-spacing: -0.35rem;
+  & :first-child {
+    font-size: calc(1.5vw + 2.5rem);
+    font-size: calc(1vw + 2.5rem);
+
+    &::first-letter {
+      font-size: calc(1.5vw + 2.7rem);
+      font-size: calc(1vw + 2.7rem);
+    }
   }
 
-  @media only screen and (max-width: 35em) {
-    margin: 3rem 0 0 -7vw;
+  @media only screen and (max-width: 1700px) {
+    margin: 2rem 0 0 -12vw;
     display: flex;
     flex-direction: column;
 
     & :last-child {
-      margin-top: 1.5rem;
+      display: block;
       margin-left: 20vw;
+    }
+  }
+  @media only screen and (max-width: 450px) {
+    margin: 2.5rem 0 0 -5vw;
+    & :last-child {
+      margin-left: 12vw;
     }
   }
 }
@@ -48,7 +61,7 @@
   justify-items: start;
   font-family: 'montag', sans-serif;
   font-weight: 300;
-  font-size: calc(1vw + 2rem);
+  font-size: calc(1vw + 1.5rem);
   color: #fff;
   letter-spacing: 0.3rem;
 
@@ -59,7 +72,7 @@
     z-index: 1000;
 
     &:first-letter {
-      font-size: calc(1vw + 2.2rem);
+      font-size: calc(1vw + 1.7rem);
     }
   }
 
@@ -77,6 +90,10 @@
     animation-fill-mode: backwards;
     position: relative;
     z-index: 1000;
+  }
+
+  @media only screen and (max-height: 850px) and (min-width: 1200px) {
+    margin-top: -1rem;
   }
 }
 

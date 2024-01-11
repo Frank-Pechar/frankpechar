@@ -75,11 +75,6 @@ function createNavigation() {
           >
         </li>   
         <li class="navigation__item">
-          <a href="../html-pages/other-interests.html" class="navigation__link" tabindex="80"
-            >Other Interests</a
-          >
-        </li>   
-        <li class="navigation__item">
           <a href="../index.html" class="navigation__link" tabindex="90">Home Page</a>
         </li>
       </ul>
