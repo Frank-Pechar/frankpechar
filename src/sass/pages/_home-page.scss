@@ -4,7 +4,6 @@
   font-weight: 400;
   font-style: normal;
   color: var(--color-yellow1);
-  font-size: calc(1.5vw + 2rem);
   font-size: calc(1vw + 2.2rem);
   margin: 2rem 0 1.5rem 0;
   animation: moveInTop 3s ease-in-out;
@@ -14,11 +13,9 @@
   transition: all 0.2s ease-in-out;
 
   & :first-child {
-    font-size: calc(1.5vw + 2.5rem);
     font-size: calc(1vw + 2.5rem);
 
     &::first-letter {
-      font-size: calc(1.5vw + 2.7rem);
       font-size: calc(1vw + 2.7rem);
     }
   }
@@ -34,9 +31,9 @@
     }
   }
   @media only screen and (max-width: 450px) {
-    margin: 2.5rem 0 0 -5vw;
+    margin: 2.5rem 0 0 -4vw;
     & :last-child {
-      margin-left: 12vw;
+      margin-left: 11vw;
     }
   }
 }
@@ -61,7 +58,7 @@
   justify-items: start;
   font-family: 'montag', sans-serif;
   font-weight: 300;
-  font-size: calc(1vw + 1.5rem);
+  font-size: calc(1vw + 1.8rem);
   color: #fff;
   letter-spacing: 0.3rem;
 
@@ -72,7 +69,7 @@
     z-index: 1000;
 
     &:first-letter {
-      font-size: calc(1vw + 1.7rem);
+      font-size: calc(1vw + 2rem);
     }
   }
 
