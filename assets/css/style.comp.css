@@ -648,9 +648,9 @@ main {
       .h1-home :last-child {
         display: block;
         margin-left: 20vw; } }
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 420px) {
     .h1-home {
-      margin: 2.5rem 0 0 -4vw; }
+      margin: 2.5rem 0 0 -5vw; }
       .h1-home :last-child {
         margin-left: 11vw; } }
 
