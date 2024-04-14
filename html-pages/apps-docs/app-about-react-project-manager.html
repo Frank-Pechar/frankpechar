@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Application Functionality Description</title>
+    <link rel="stylesheet" href="https://use.typekit.net/vrm1cgb.css" />
+    <link rel="stylesheet" href="../../assets/css/app-about.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Project Manager App - React Project</h1>
+      <h2>App Description</h2>
+    </header>
+    <main>
+      <section>
+        <h3>App Overview</h3>
+        <p>
+          This App provides for creating and maintaining a projects list along
+          with tasks within each project &bull; New projects can be added &bull;
+          Tasks can be added to each project &bull; Projects and individual
+          tasks can also be deleted.
+        </p>
+      </section>
+      <hr />
+      <section>
+        <h3>User Functionality</h3>
+        <ul>
+          <li class="item-head">Add a Project</li>
+          <li>
+            &bull; Click &lt;Create new project&gt; Button in Main Section
+            &bull; or, Click &lt;+Add Project&gt; Button in Sidebar section
+            &bull; Enter Project Title, Description, and Due Date &bull; Click
+            &lt;Save&gt; Button &bull; Click &lt;Cancel&gt; Button to cancel
+            adding new project
+          </li>
+          <li class="item-head">Display a Project and Tasks</li>
+          <li>&bull; Click Project Title in Sidebar to Display</li>
+          <li class="item-head">Remove Project from Project List</li>
+          <li>&bull; Click Project Title in Sidebar to Select</li>
+          <li>&bull; Click &lt;Delete&gt; Button</li>
+          <li class="item-head">Add Tasks to Project</li>
+          <li>&bull; Click Project Title in Sidebar to Select</li>
+          <li>&bull; Enter Task Item</li>
+          <li>&bull; Click &lt;Add Task&gt; Button</li>
+          <li class="item-head">Remove Task from Project</li>
+          <li>&bull; Click Project Title in Sidebar to Select</li>
+          <li>
+            &bull; Click &lt;Clear&gt; Button Next to the Task to be Removed
+          </li>
+        </ul>
+      </section>
+
+      <hr />
+      <section>
+        <h3>Coding Features and Methods Used</h3>
+        <p>
+          This App Uses React Features Such As: &bull; Processing user input
+          with Refs and Forwarded Refs &bull; Implemented useImperativeHandle to
+          allow access to child (Modal) function within parent (NewProject) to
+          open modal &bull; Use of Portal to render modal into DOM &bull;
+          Implemented useState hook &bull; Use of Set State callback function
+          parameter to ensure most current state &bull; Usage of props and
+          props.children &bull; Maintaining minimum state management &bull; Two
+          way binding of input fields &bull; Use of list Keys for unique id
+          &bull; Deriving and lifting computed values &bull; Retaining
+          immutability &bull; Tailwind & Dynamic styling
+        </p>
+      </section>
+      <hr />
+      <section>
+        <h3 id="launchReadme">Click for More App Info</h3>
+        <a
+          href="https://github.com/Frank-Pechar/react-project-manager/blob/master/README.md"
+          target="_blank"
+          aria-labelledby="launchReadme"
+          >README</a
+        >
+        <h3 id="launchApp">Click to Launch App</h3>
+        <a
+          href="https://frank-pechar-react-project-manager.netlify.app/"
+          target="_blank"
+          aria-labelledby="launchApp"
+          >LAUNCH</a
+        >
+      </section>
+    </main>
+    <footer>
+      <p>React Course Project - by Maximilian Schwarzmuller</p>
+      <p>at UDEMY - Completed by Frank Pechar</p>
+      <p>with Modifications and Enhancements</p>
+    </footer>
+  </body>
+</html>

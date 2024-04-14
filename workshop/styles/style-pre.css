@@ -1,0 +1,126 @@
+:root {
+  --color-primary: hsla(252, 100%, 24%, 1);
+  --color-primary-dark: hsla(252, 100%, 10%, 1);
+  --color-secondary: hsl(45, 100%, 63%);
+  --color-secondary: hsl(45, 100%, 48%);
+  --color-secondary: hsl(30, 100%, 40%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: clamp(0.5rem, calc(0.1rem + 1.4vw), 1.5rem);
+  color: #fff;
+}
+
+body {
+  font-family: 'roboto', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(#034d60, #09728d);
+  background: radial-gradient(
+    circle,
+    var(--color-primary) 40%,
+    var(--color-primary-dark) 70%
+  );
+
+  text-align: center;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+h1 {
+  margin: 2rem;
+  font-size: 1.7rem;
+  letter-spacing: 0.2rem;
+  text-shadow: 0.1rem 0.1rem 0.3rem #000;
+}
+
+h2 {
+  margin: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-shadow: 0.1rem 0.1rem 0.3rem #000;
+}
+
+h3 {
+  margin: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  text-shadow: 0.1rem 0.1rem 0.3rem #000;
+}
+
+button {
+  font-weight: 700;
+  border: 0;
+  line-height: 2.5;
+  padding: 0 2rem;
+  font-size: 1rem;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-color: hsl(22, 100%, 43%);
+  background-color: var(--color-secondary);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+button:hover {
+  background-color: rgba(255, 0, 0, 1);
+  background-color: hsl(18, 100%, 43%);
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.contexts button {
+  font-size: 80%;
+  padding: 0.75rem 1rem;
+  line-height: normal;
+  pointer-events: none;
+}
+
+.this button {
+  display: none;
+}
+
+pre {
+  margin-top: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  @media only screen and (max-width: 500px) {
+    font-size: 0.8rem;
+  }
+}
+
+/* pre code.hljs {
+  overflow-x: hidden;
+} */
+
+footer {
+  padding-bottom: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}

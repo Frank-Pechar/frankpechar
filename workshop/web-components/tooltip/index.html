@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Components - Tooltip</title>
+    <!-- Global Styles -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        --color-primary: #f7ff82;
+        font-family: sans-serif;
+      }
+      h1 {
+        font-size: 1.7rem;
+        line-height: 1.5;
+      }
+      h2 {
+        margin-top: 2.5rem;
+        font-size: 1.2rem;
+      }
+      p {
+        background-color: var(--color-primary);
+        display: inline;
+      }
+    </style>
+    <script defer src="tooltip.js"></script>
+    <script defer src="confirm-link.js"></script>
+  </head>
+  <body>
+    <heading>
+      <h1>
+        Custom Autonomous Elements and
+        <br />
+        Customized Built-In Elements
+      </h1>
+    </heading>
+    <main>
+      <h2>Custom Autonomous Element</h2>
+      <p>
+        <uc-tooltip
+          class="important"
+          text="This Is HTML Provided Tooltip Text."
+        >
+          <span class="highlight">HTML Provided</span>
+        </uc-tooltip>
+        Tooltip Label
+      </p>
+      <h2>Custom Autonomous Element</h2>
+      <uc-tooltip></uc-tooltip>
+      <h2>Customized Built-In Element</h2>
+      <a is="uc-confirm-link" href="https://www.google.com"
+        >Go to Google Website?</a
+      >
+    </main>
+  </body>
+</html>

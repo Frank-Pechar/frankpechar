@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Frank Pechar" />
+    <meta
+      name="description"
+      content="JavaScript Concepts - Function Recursion"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
+    ></script>
+    <script defer src="script.js"></script>
+    <title>
+      Frank Pechar - JavaScript Concepts Work Area - Function Recursion
+    </title>
+  </head>
+
+  <body>
+    <header>
+      <h1>JavaScript Concept Exercises</h1>
+    </header>
+    <main>
+      <h2>Recursion Techniques used to perform the following:</h2>
+      <h3>
+        <br />
+
+        &bull;&nbsp;Flatten Nested Data Structures such as Objects and Arrays -
+        Especially useful for unknown levels of nesting.
+        &ensp;&bull;&nbsp;Reverse the Order of a String &ensp;&bull;&nbsp;List
+        Permutations of a String &ensp;&bull;&nbsp;Return Fibonacci Number at a
+        Certain Index Position &ensp;&bull;&nbsp;Calculate the Power of a Number
+        &ensp;&bull;&nbsp;Calculate the Factorial of a Number
+        &ensp;&bull;&nbsp;Return an Array with Numbers Between a Given Range
+        &ensp;&bull;&nbsp;Sum Up All the Numbers in an Array
+        &ensp;&bull;&nbsp;Sum Up Numbers from 1 to a Given Number
+        <br />
+        <br />
+        View Console Log for Results
+      </h3>
+      <section>
+        <pre>
+          <code class="language-javascript">
+
+hljs.highlightAll();
+
+('use strict');
+
+// R E C U R S I O N
+
+// RECURSION FOR PROCESSING NESTED DATA STRUCTURES
+
+/*******************************************/
+// RECURSION to FLATTEN NESTED OBJECTS
+
+console.log('\n');
+console.log(
+  '%c****   RESULTS   for   RECURSION   EXERCISES   ****\n',
+  'color: blue; font-weight: bold;'
+);
+console.log('********************************************************');
+console.log('*** RECURSION FOR PROCESSING NESTED DATA STRUCTURES  ***');
+console.log('***  ESPECIALLY WHEN LEVELS OF NESTING ARE UNKNOWN   ***');
+console.log('********************************************************');
+
+const myself = {
+  name: 'Frank',
+  friends: [
+    {
+      name: 'Kim',
+      friends: [
+        {
+          name: 'Stephanie',
+          friends: [{ name: 'Alita' }],
+        },
+
+        {
+          name: 'Nathan',
+          friends: [
+            {
+              name: 'Jerry',
+            },
+            {
+              name: 'Marc',
+            },
+            {
+              name: 'Rick',
+            },
+            {
+              name: 'Mike',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'Sewell',
+    },
+    {
+      name: 'Bellamy',
+    },
+  ],
+};
+
+function getFriendNames(person) {
+  const collectedNames = [];
+
+  if (!person.friends) {
+    return [];
+  }
+
+  for (const friend of person.friends) {
+    collectedNames.push(friend.name);
+    collectedNames.push(...getFriendNames(friend));
+  }
+
+  return collectedNames;
+}
+
+console.log(
+  '%cFlattened Nested Object - \n',
+  'color: blue;',
+  getFriendNames(myself),
+  '\n \n'
+);
+
+/*******************************************/
+// RECURSION to FLATTEN NESTED ARRAYS
+
+function flattenArray(arr) {
+  let result = [];
+
+  for (const item of arr) {
+    if (Array.isArray(item)) {
+      result = result.concat(flattenArray(item));
+    } else {
+      result.push(item);
+    }
+  }
+
+  return result;
+}
+
+const flatArray = flattenArray([1, 2, 3, [4, 5, [6, 7, 8], 9], 10]);
+
+console.log(
+  '%cFlattened Nested Array - \n',
+  'color: blue;',
+  flatArray,
+  '\n \n'
+);
+
+/*******************************************/
+// RECURSION TO REVERSE THE ORDER OF A STRING
+
+console.log('*******************************************');
+console.log('***    OTHER RECURSION APPLICATIONS     ***');
+console.log('******************************************* \n \n');
+
+let returnVar;
+
+function reverseString(str) {
+  return str === '' ? '' : reverseString(str.substr(1)) + str.charAt(0);
+}
+
+const reversedString = reverseString('string');
+
+console.log(
+  '%cReverse order of a string',
+  'color: blue;',
+  ' - string =',
+  reversedString
+);
+
+/*******************************************/
+// RECURSION TO RETURN PERMUTATIONS OF A STRING
+
+function permutations(str) {
+  const result = [];
+
+  if (str.length === 0) {
+    result.push('');
+    return result;
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    const firstChar = str[i];
+    const restOfString = str.slice(0, i) + str.slice(i + 1);
+    const subPermutations = permutations(restOfString);
+
+    for (let j = 0; j < subPermutations.length; j++) {
+      result.push(firstChar + subPermutations[j]);
+    }
+  }
+
+  return result;
+}
+
+const permutationsResult = permutations('abc');
+
+console.log(
+  '%cPermutations of a string',
+  'color: blue;',
+  ' - abc =',
+  permutationsResult
+);
+
+/*******************************************/
+// RECURSION TO RETURN FIBONACCI NUMBER AT A CERTAIN INDEX POSITION
+
+function fibonacci(num) {
+  if (num < 2) return num;
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+const fibonacciResult = fibonacci(8);
+console.log(
+  '%cFibonacci number at a particular index position',
+  'color: blue;',
+  ' - 9 =',
+  fibonacciResult
+);
+
+/*******************************************/
+// RECURSION TO CALCULATE THE FACTORIAL OF A NUMBER
+
+function factorial(num) {
+  return num === 0 || num === 1 ? 1 : num * factorial(num - 1);
+}
+
+const factorialResult = factorial(7);
+
+console.log(
+  '%cFactorial of a Number',
+  'color: blue;',
+  ' - 7 =',
+  factorialResult
+);
+
+/*******************************************/
+// RECURSION TO RETURN A NUMBERS ARRAY CONTAINING ALL NUMBERS IN RANGE
+
+function rangeOfNumbers(startNum, endNum) {
+  if (startNum === endNum) {
+    return [startNum];
+  }
+
+  const numbers = rangeOfNumbers(startNum, endNum - 1);
+
+  numbers.push(endNum);
+
+  return numbers;
+}
+
+const range = rangeOfNumbers(3, 21);
+console.log(
+  '%cArray with numbers in the range of n1 to n2',
+  'color: blue;',
+  ' - 3 to 21 =',
+  range
+);
+
+/*******************************************/
+// RECURSION TO SUM UP ALL THE NUMBERS IN AN ARRAY
+
+function sumArray(arr) {
+  return arr.length === 0 ? 0 : arr[0] + sumArray(arr.slice(1));
+}
+
+console.log(
+  '%cSum numbers in an array',
+  'color: blue;',
+  ' - [5, 20, 35] =',
+  sumArray([5, 20, 35])
+);
+
+/*******************************************/
+// RECURSION TO SUM UP NUMBERS FROM 1 TO GIVEN NUMBER
+
+function sumUpTo(n) {
+  return n === 1 ? 1 : n + sumUpTo(n - 1);
+}
+
+console.log(
+  '%cSum up numbers from 1 to n',
+  'color: blue;',
+  ' - 1 to 5 =',
+  sumUpTo(5)
+);
+
+/*******************************************/
+// RECURSION CAN WORK WITH: FUNCTION DECLARATIONS, FUNCTION EXPRESSIONS AND ARROW FUNCTIONS
+
+console.log('\n');
+console.log('*******************************************');
+console.log('***   RECURSION CAN WORK WITH:          ***');
+console.log('***     1) FUNCTION DECLARATIONS        ***');
+console.log('***     2) FUNCTION EXPRESSIONS         ***');
+console.log('***     3) ARROW FUNCTIONS               ***');
+console.log('******************************************* \n');
+
+/*******************************************/
+// RECURSION TO CALCULATE THE POWER OF A NUMBER - FUNCTION DECLARATION
+
+function powerOf(x, n) {
+  return n === 1 ? x : x * powerOf(x, n - 1);
+}
+
+console.log(
+  '5 to the power of 4 - ' +
+    powerOf(5, 4) +
+    ' - ' +
+    '%cFunction Declaration - Named',
+  'color: blue;'
+);
+
+/*******************************************/
+// RECURSION TO CALCULATE THE POWER OF A NUMBER - FUNCTION EXPRESSION
+
+const powerOfFnExp = function (x, n) {
+  return n === 1 ? x : x * powerOfFnExp(x, n - 1);
+};
+
+console.log(
+  '5 to the power of 4 - ' +
+    powerOfFnExp(5, 4) +
+    ' - ' +
+    '%cFunction Expression - Variable Name',
+  'color: blue;'
+);
+
+/*******************************************/
+// RECURSION TO CALCULATE THE POWER OF A NUMBER - ARROW FUNCTION
+
+const powerOfArrFn = (x, n) => (n === 1 ? x : x * powerOfArrFn(x, n - 1));
+
+console.log(
+  '5 to the power of 4 - ' +
+    powerOfArrFn(5, 4) +
+    ' - ' +
+    '%cArrow Function - Variable Name',
+  'color: blue;'
+);
+            
+			    </code>
+        </pre>
+      </section>
+    </main>
+    <footer class="footer">Development Workshop</footer>
+  </body>
+</html>

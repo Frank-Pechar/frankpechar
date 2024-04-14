@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Components - Modal</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 2rem;
+        font-family: sans-serif;
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+    <script defer src="modal.js"></script>
+  </head>
+  <body>
+    <uc-modal>
+      <h2 slot="title">Confirm</h2>
+      <p>With your confirmation you agree to finish testing this modal</p>
+    </uc-modal>
+    <header><h1>Web Component Modal</h1></header>
+    <p>Continue with Web Component Testing</p>
+    <button>Show Details & Confirm</button>
+    <script>
+      // Global Initializations
+      const confirmButton = document.querySelector('button');
+      const modal = document.querySelector('uc-modal');
+      const modalTitle = document.querySelector('h2');
+      modal.addEventListener('confirm', () => console.log('Confirmed...'));
+      modal.addEventListener('cancel', () => console.log('Cancelled...'));
+
+      confirmButton.addEventListener('click', () => {
+        if (modal.hasAttribute('opened')) {
+          console.log('Modal opened');
+        } else {
+          modal.open();
+          console.log('Opening...');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -70,6 +70,12 @@ function createNavigation() {
           >
         </li>
         <li class="navigation__item">
+          <a href="../html-pages/workshop-projects.html" 
+          class="navigation__link" tabindex="65"
+            >Workshop</a
+          >
+        </li>
+        <li class="navigation__item">
           <a href="../html-pages/digital-arts.html" class="navigation__link" tabindex="70"
             >Digital Arts</a
           >
