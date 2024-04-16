@@ -1,9 +1,10 @@
 :root {
   --color-primary: hsla(252, 100%, 24%, 1);
+  --color-primary-light: hsla(252, 100%, 48%, 1);
   --color-primary-dark: hsla(252, 100%, 10%, 1);
-  --color-secondary: hsl(45, 100%, 63%);
   --color-secondary: hsl(45, 100%, 48%);
-  --color-secondary: hsl(30, 100%, 40%);
+  --color-secondary-light: hsl(45, 100%, 63%);
+  --color-secondary-dark: hsl(40, 100%, 50%);
 }
 *,
 *::after,
@@ -16,19 +17,17 @@
 html {
   box-sizing: border-box;
   font-size: clamp(0.5rem, calc(0.1rem + 1.4vw), 1.5rem);
-  color: #fff;
+  color: var(--color-secondary-light);
 }
 
 body {
   font-family: 'roboto', sans-serif;
-  font-weight: 700;
-  background: linear-gradient(#034d60, #09728d);
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle,
     var(--color-primary) 40%,
     var(--color-primary-dark) 70%
-  );
-
+  ); */
+  background: var(--color-primary);
   text-align: center;
 }
 
@@ -37,7 +36,7 @@ section {
 }
 
 h1 {
-  margin: 2rem;
+  margin: 3rem 0 2rem;
   font-size: 1.7rem;
   letter-spacing: 0.2rem;
   text-shadow: 0.1rem 0.1rem 0.3rem #000;
@@ -58,17 +57,14 @@ h3 {
 }
 
 button {
-  font-weight: 700;
+  font-weight: 900;
   border: 0;
   line-height: 2.5;
   padding: 0 2rem;
   font-size: 1rem;
-  color: #fff;
-  text-shadow: 1px 1px 1px #000;
+  color: var(--color-primary);
   border-radius: 10px;
-  background-color: rgba(220, 0, 0, 1);
-  background-color: hsl(22, 100%, 43%);
-  background-color: var(--color-secondary);
+  background-color: var(--color-secondary-dark);
   background-image: linear-gradient(
     to top left,
     rgba(0, 0, 0, 0.2),
@@ -77,11 +73,13 @@ button {
   );
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  transition: all ease-in-out 0.2s;
 }
 
-button:hover {
-  background-color: rgba(255, 0, 0, 1);
-  background-color: hsl(18, 100%, 43%);
+button:hover,
+button:focus {
+  filter: brightness(1.1);
+  transform: scale(1.05);
   cursor: pointer;
 }
 
@@ -102,7 +100,7 @@ button:active {
 }
 
 pre {
-  margin-top: 1rem;
+  margin-bottom: -2.1rem;
   text-align: left;
   font-size: 0.9rem;
   white-space: pre-wrap;
@@ -117,10 +115,18 @@ pre {
 } */
 
 footer {
-  padding-bottom: 1.5rem;
+  padding: 1.5rem;
   font-weight: 700;
   font-style: normal;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
   text-align: center;
+  background: var(--color-primary);
+}
+
+hr {
+  margin-top: 2rem;
+  height: 2px;
+  background-color: var(--color-secondary-light);
+  border: none;
 }
