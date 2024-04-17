@@ -51,7 +51,6 @@ class Tooltip extends HTMLElement {
 
             ::slotted(.highlight) {
               background-color: orange;
-              border-bottom: 2px dotted red;
             }
 
             .icon {
