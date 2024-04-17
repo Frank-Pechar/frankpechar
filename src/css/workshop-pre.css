@@ -23,7 +23,7 @@ header {
 main {
   padding-inline: 3rem;
 }
-h1 {
+h1:not(.web-components) {
   @media only screen and (max-width: 420px) {
     margin-top: 4.5rem;
   }

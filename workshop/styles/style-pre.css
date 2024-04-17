@@ -5,6 +5,8 @@
   --color-secondary: hsl(45, 100%, 48%);
   --color-secondary-light: hsl(45, 100%, 63%);
   --color-secondary-dark: hsl(40, 100%, 50%);
+  --color-text-shadow: hsl(0, 93%, 17%);
+  --color-text-shadow-dk: hsla(0, 93%, 17%, 0.3);
 }
 *,
 *::after,
@@ -17,11 +19,13 @@
 html {
   box-sizing: border-box;
   font-size: clamp(0.5rem, calc(0.1rem + 1.4vw), 1.5rem);
-  color: var(--color-secondary-light);
 }
 
 body {
   font-family: 'roboto', sans-serif;
+  color: var(--color-secondary-light);
+  text-shadow: 0 0.2rem 0.3rem var(--color-text-shadow);
+  font-weight: 400;
   /* background: radial-gradient(
     circle,
     var(--color-primary) 40%,
@@ -36,28 +40,30 @@ section {
 }
 
 h1 {
+  font-family: 'quiche-sans', sans-serif;
   margin: 3rem 0 2rem;
   font-size: 1.7rem;
   letter-spacing: 0.2rem;
-  text-shadow: 0.1rem 0.1rem 0.3rem #000;
 }
 
 h2 {
+  font-family: 'quiche-sans', sans-serif;
   margin: 1rem;
   font-size: 1.5rem;
   font-weight: 500;
-  text-shadow: 0.1rem 0.1rem 0.3rem #000;
 }
 
 h3 {
   margin: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 300;
-  text-shadow: 0.1rem 0.1rem 0.3rem #000;
+  &:last-of-type {
+    font-style: italic;
+  }
 }
 
 button {
-  font-weight: 900;
+  font-weight: 700;
   border: 0;
   line-height: 2.5;
   padding: 0 2rem;
@@ -81,15 +87,19 @@ button:focus {
   filter: brightness(1.1);
   transform: scale(1.05);
   cursor: pointer;
-}
-
-button:active {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
+button:active {
+  filter: brightness(1);
+  transform: scale(1);
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
 .contexts button {
-  font-size: 80%;
+  font-size: 90%;
   padding: 0.75rem 1rem;
   line-height: normal;
   pointer-events: none;
@@ -103,6 +113,7 @@ pre {
   margin-bottom: -2.1rem;
   text-align: left;
   font-size: 0.9rem;
+  text-shadow: none;
   white-space: pre-wrap;
   word-wrap: break-word;
   @media only screen and (max-width: 500px) {
@@ -115,6 +126,7 @@ pre {
 } */
 
 footer {
+  font-family: 'quiche-sans', sans-serif;
   padding: 1.5rem;
   font-weight: 700;
   font-style: normal;
