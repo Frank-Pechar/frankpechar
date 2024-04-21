@@ -63,12 +63,14 @@ $left-counter: 11vw;
   justify-content: center;
   align-items: center;
 
-  &:hover {
+  &:hover,
+  &:focus {
     scale: 1.1;
     filter: brightness(1.2);
     transform: translateY(-0.5rem);
-    box-shadow: 0 0rem 1rem 0.3rem hsla(58, 100%, 50%, 0.8);
+    box-shadow: 0 0rem 0.5rem 0.2rem hsla(58, 100%, 50%, 0.8);
     border-radius: 50%;
+    outline: none;
 
     & > * {
       margin-bottom: 4rem;

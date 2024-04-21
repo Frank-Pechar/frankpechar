@@ -6,7 +6,7 @@
   font-size: var(--fs-project-headings);
   letter-spacing: 0.2rem;
   color: var(--color-yellow1);
-  text-shadow: 0 0.2rem 0.3rem var(--color-text-shadow);
+  text-shadow: 0 0.1rem 0.3rem var(--color-text-shadow);
 
   & :last-child {
     font-size: var(--fs-project-heading2);
@@ -30,6 +30,6 @@
   font-weight: 200;
   font-style: italic;
   color: var(--color-yellow1);
-  text-shadow: 0 0.2rem 0.3rem var(--color-text-shadow);
+  text-shadow: 0 0.1rem 0.3rem var(--color-text-shadow);
   font-size: var(--fs-click-image);
 }
