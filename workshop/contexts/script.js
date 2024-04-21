@@ -2,15 +2,13 @@ hljs.highlightAll();
 
 ('use strict');
 
-// FUNCTION, METHOD AND SCOPE CREATION TECHNIQUES
-
 /*******************************************/
 // CLASS AND OBJECT METHODS
 
 console.log('\n');
-console.log('****           CLASS AND OBJECT METHODS             ****\n\n');
+console.log('****           CLASS AND OBJECT METHODS\n\n');
 console.log('********************************************************');
-console.log('***     Instance, Prototype, and Static Methods      ***');
+console.log('***     Instance, Prototype, and Static Methods');
 console.log('********************************************************');
 
 /*************** Person Class ***************/
@@ -32,7 +30,7 @@ class Person {
           'color: Royalblue;'
         );
       }
-      console.log(`  ${firstName} says ${jobDescription}`);
+      console.log(`  ${firstName} is ${jobDescription}`);
     };
 
     this.instanceFnExp1 = function (clickEvent) {
@@ -48,7 +46,7 @@ class Person {
           'color: Royalblue;'
         );
       }
-      console.log(`  ${firstName} says ${jobDescription}`);
+      console.log(`  ${firstName} is ${jobDescription}`);
     };
   }
 
@@ -65,7 +63,7 @@ class Person {
         'color: Royalblue;'
       );
     }
-    console.log(`  ${firstName} says ${jobDescription}`);
+    console.log(`  ${firstName} is ${jobDescription}`);
   };
 
   instanceFnExp2 = function (clickEvent) {
@@ -77,11 +75,11 @@ class Person {
       );
     } else {
       console.log(
-        `\n%cInstance Function Expression in Person Constructor - instanceFnExp2`,
+        `\n%cInstance Function Expression outside of Person Constructor - instanceFnExp2`,
         'color: Royalblue;'
       );
     }
-    console.log(`  ${firstName} says ${jobDescription}`);
+    console.log(`  ${firstName} is ${jobDescription}`);
   };
 
   // Start of Prototype Function
@@ -99,7 +97,7 @@ class Person {
         'color: Royalblue;'
       );
     }
-    console.log(`  ${firstName} says ${jobDescription}\n`);
+    console.log(`  ${firstName} is ${jobDescription}\n`);
   }
 
   // Start of Static Function Located on Person Class Constructor Object
@@ -116,7 +114,7 @@ class Person {
         'color: Royalblue;'
       );
     }
-    console.log(`  ${firstName} says ${jobDescription}\n`);
+    console.log(`  ${firstName} is ${jobDescription}\n`);
   }
 }
 
@@ -201,7 +199,7 @@ class Profession extends Person {
         'color: Royalblue;'
       );
     }
-    console.log(`  ${firstName} says ${jobDescription}\n`);
+    console.log(`  ${firstName} is ${jobDescription}\n`);
   }
 
   // Start of Static Function Located on Profession Class Constructor Object
@@ -218,11 +216,15 @@ class Profession extends Person {
         'color: Royalblue;'
       );
     }
-    console.log(`  ${firstName} says ${jobDescription}\n`);
+    console.log(`  ${firstName} is ${jobDescription}\n`);
   }
 }
 
-const frank = new Profession('Frank', 'Web Developer', 'JavaScript is Fun!');
+const frank = new Profession(
+  'Frank',
+  'Web Developer',
+  'creating and calling JavaScript methods.'
+);
 
 const { firstName, jobDescription } = frank;
 let callFunction;
@@ -284,7 +286,7 @@ Person.prototype.addedProtoFnExpPerson = function (clickEvent) {
       'color: Royalblue;'
     );
   }
-  console.log(`  ${firstName} says ${jobDescription}`);
+  console.log(`  ${firstName} is ${jobDescription}`);
 };
 
 frank.addedProtoFnExpPerson();
@@ -307,7 +309,7 @@ Person.prototype.addedProtoArrFnPerson = (
       'color: Royalblue;'
     );
   }
-  console.log(`  ${firstName} says ${jobDescription}`);
+  console.log(`  ${firstName} is ${jobDescription}`);
 };
 
 frank.addedProtoArrFnPerson(frank);
@@ -328,7 +330,7 @@ Profession.prototype.addedProtoFnExpProfession = function (clickEvent) {
       'color: Royalblue;'
     );
   }
-  console.log(`  ${firstName} says ${jobDescription}`);
+  console.log(`  ${firstName} is ${jobDescription}`);
 };
 
 frank.addedProtoFnExpProfession();
@@ -351,7 +353,7 @@ Profession.prototype.addedProtoArrFnProfession = (
       'color: Royalblue;'
     );
   }
-  console.log(`  ${firstName} says ${jobDescription}`);
+  console.log(`  ${firstName} is ${jobDescription}`);
 };
 
 frank.addedProtoArrFnProfession(frank);

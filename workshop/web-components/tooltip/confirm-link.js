@@ -5,7 +5,8 @@
 alert(
   `This Web Component Script for the - Go to Google Website? - Link Implements the Following:
   1) Creation of a Customized Built-In Element Based on the Anchor Element
-  2) Before linking to another website this Customized Element will call the confirm() method to display a dialog box with the text - Do you really want to leave? with OK and Cancel buttons.
+  2) Before linking to another website this Customized Element will call the confirm() method to display a dialog box with the text - Do you really want to leave? with OK and Cancel buttons
+  3) Note: This Feature - Customized Built-In Elements are not supported in Safari
   `
 );
 

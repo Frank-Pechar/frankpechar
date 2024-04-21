@@ -14,10 +14,10 @@ console.log(
   '%c****   RESULTS   for   RECURSION   EXERCISES   ****\n',
   'color: blue; font-weight: bold;'
 );
-console.log('********************************************************');
-console.log('*** RECURSION FOR PROCESSING NESTED DATA STRUCTURES  ***');
-console.log('***  ESPECIALLY WHEN LEVELS OF NESTING ARE UNKNOWN   ***');
-console.log('********************************************************');
+console.log('*********************************************************');
+console.log('*** RECURSION FOR PROCESSING NESTED DATA STRUCTURES');
+console.log('*** ESPECIALLY USEFUL WHEN LEVELS OF NESTING ARE UNKNOWN');
+console.log('*********************************************************');
 
 const myself = {
   name: 'Frank',
@@ -106,12 +106,12 @@ console.log(
   '\n \n'
 );
 
+console.log('****************************************');
+console.log('***    OTHER RECURSION APPLICATIONS     ');
+console.log('**************************************** \n \n');
+
 /*******************************************/
 // RECURSION TO REVERSE THE ORDER OF A STRING
-
-console.log('*******************************************');
-console.log('***    OTHER RECURSION APPLICATIONS     ***');
-console.log('******************************************* \n \n');
 
 let returnVar;
 
@@ -249,12 +249,12 @@ console.log(
 // RECURSION CAN WORK WITH: FUNCTION DECLARATIONS, FUNCTION EXPRESSIONS AND ARROW FUNCTIONS
 
 console.log('\n');
-console.log('*******************************************');
-console.log('***   RECURSION CAN WORK WITH:          ***');
-console.log('***     1) FUNCTION DECLARATIONS        ***');
-console.log('***     2) FUNCTION EXPRESSIONS         ***');
-console.log('***     3) ARROW FUNCTIONS               ***');
-console.log('******************************************* \n');
+console.log('************************************');
+console.log('***   RECURSION CAN WORK WITH:      ');
+console.log('***     1) FUNCTION DECLARATIONS    ');
+console.log('***     2) FUNCTION EXPRESSIONS     ');
+console.log('***     3) ARROW FUNCTIONS          ');
+console.log('************************************ \n');
 
 /*******************************************/
 // RECURSION TO CALCULATE THE POWER OF A NUMBER - FUNCTION DECLARATION

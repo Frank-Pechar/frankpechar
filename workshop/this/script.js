@@ -1,29 +1,29 @@
 hljs.highlightAll();
 
 console.log(`
-//*** t h i s - K E Y W O R D - R E F E R E N C E S ***********
-//*** "this" Keyword will refer to 1) Global Context        ***
-//*** (window), or, 2) INSIDE A FUNCTION - Object/owner     ***
-//*** that called the function (whether manually or         ***
-//*** through Browser, 3) Bound data/oject. Reference       ***
-//*** will differ whether in strict or non-strict mode      ***
-//***                                                       ***
-//*** With arrow functions there is no binding of this.     ***
-//***                                                       ***
-//*** In regular functions the this keyword represents      ***
-//*** the object that called the function, which could      ***
-//*** be the window, a user object, a button, or whatever.  ***
-//*** It could also represent a binding. Regular functions  ***
-//*** can be a declared function or a function expression.  ***
-//***                                                       ***
-//*** With arrow functions the this keyword always          ***
-//*** represents the object that defined the arrow          ***
-//*** function (The surrounding context).                   ***
-//***                                                       ***
-//*** So a this keyword inside of an arrow function behaves ***
-//*** as if it is just outside of the function in the same  ***
-//*** context.                                              ***
-//*************************************************************
+//*** t h i s - K E Y W O R D - R E F E R E N C E S ********
+//*** "this" Keyword will refer to 1) Global Context        
+//*** (window), or, 2) INSIDE A FUNCTION - Object/owner     
+//*** that called the function (whether manually or         
+//*** through Browser, 3) Bound data/oject. Reference       
+//*** will differ whether in strict or non-strict mode      
+//***                                                       
+//*** With arrow functions there is no binding of this.     
+//***                                                       
+//*** In regular functions the this keyword represents      
+//*** the object that called the function, which could      
+//*** be the window, a user object, a button, or whatever.  
+//*** It could also represent a binding. Regular functions  
+//*** can be a declared function or a function expression.  
+//***                                                       
+//*** With arrow functions the this keyword always          
+//*** represents the object that defined the arrow          
+//*** function (The surrounding context).                   
+//***                                                       
+//*** So a this keyword inside of an arrow function behaves 
+//*** as if it is just outside of the function in the same  
+//*** context.                                              
+//**********************************************************
 `);
 
 (() => {

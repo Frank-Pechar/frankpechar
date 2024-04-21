@@ -1,12 +1,11 @@
 :root {
-  --color-primary: hsla(252, 100%, 24%, 1);
+  --color-primary: hsla(252, 100%, 20%, 1);
   --color-primary-light: hsla(252, 100%, 48%, 1);
   --color-primary-dark: hsla(252, 100%, 10%, 1);
   --color-secondary: hsl(45, 100%, 48%);
   --color-secondary-light: hsl(45, 100%, 63%);
   --color-secondary-dark: hsl(40, 100%, 50%);
-  --color-text-shadow: hsl(0, 93%, 17%);
-  --color-text-shadow-dk: hsla(0, 93%, 17%, 0.3);
+  --color-text-shadow: hsl(0, 93%, 12%);
 }
 *,
 *::after,
@@ -24,7 +23,7 @@ html {
 body {
   font-family: 'roboto', sans-serif;
   color: var(--color-secondary-light);
-  text-shadow: 0 0.2rem 0.3rem var(--color-text-shadow);
+  text-shadow: 0 0.1rem 0.3rem var(--color-text-shadow);
   font-weight: 400;
   /* background: radial-gradient(
     circle,

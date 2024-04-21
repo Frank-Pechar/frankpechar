@@ -20,7 +20,8 @@
     ></script>
     <script defer src="script.js"></script>
     <title>
-      Frank Pechar - JavaScript Concepts Work Area- Functional Programming Techniques and Scope Creation
+      Frank Pechar - JavaScript Concepts Work Area- Functional Programming
+      Techniques and Private Scope Creation
     </title>
   </head>
 
@@ -29,7 +30,9 @@
       <h1>JavaScript Concept Exercises</h1>
     </header>
     <main>
-      <h2>Functional Programming Techniques and Scope Creation <br /></h2>
+      <h2>
+        Functional Programming Techniques and Private Scope Creation <br />
+      </h2>
       <section class="section1">
         <h3>View Console Log for Results</h3>
         <br />
@@ -42,12 +45,12 @@ hljs.highlightAll();
 
 console.log('\n');
 console.log('**************************************************************');
-console.log('***  Functional Programming Techniques and Scope Creation  ***');
+console.log('***  Functional Programming Techniques and Scope Creation  ');
 console.log('**************************************************************');
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('***     Factory Function for Partial Application     ***');
+console.log('***     Factory Function for Partial Application     ');
 console.log('********************************************************');
 
 function createTaxCalculator(taxRate) {
@@ -64,7 +67,7 @@ console.log(`Tax Amount: ${calcTax2(1000)}`);
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('***  Function Currying (Partial Application) w/bind  ***');
+console.log('***  Function Currying (Partial Application) w/bind  ');
 console.log('********************************************************');
 
 function createTaxCalculator2(taxRate, amount) {
@@ -78,7 +81,7 @@ console.log(`Tax Amount: ${calcTax4(1000)}`);
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('***      Simple Curried Functions using Closures     ***');
+console.log('***      Simple Curried Functions using Closures     ');
 console.log('********************************************************');
 const multiply = (x, y, z) => x * y * z;
 
@@ -98,7 +101,7 @@ console.log(
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('*** Creating a Private Scope Using an IIFE (old way) ***');
+console.log('*** Creating a Private Scope Using an IIFE');
 console.log('********************************************************');
 
 let var1 = 4;
@@ -112,7 +115,7 @@ let var2 = 3;
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('***    Creating a Private Scope Using Block Scope    ***');
+console.log('***    Creating a Private Scope Using Block Scope    ');
 console.log('********************************************************');
 
 let var3 = 4;

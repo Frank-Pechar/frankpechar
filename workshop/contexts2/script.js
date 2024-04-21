@@ -4,12 +4,12 @@ hljs.highlightAll();
 
 console.log('\n');
 console.log('**************************************************************');
-console.log('***  Functional Programming Techniques and Scope Creation  ***');
+console.log('***  Functional Programming Techniques and Scope Creation  ');
 console.log('**************************************************************');
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('***     Factory Function for Partial Application     ***');
+console.log('***     Factory Function for Partial Application     ');
 console.log('********************************************************');
 
 function createTaxCalculator(taxRate) {
@@ -26,7 +26,7 @@ console.log(`Tax Amount: ${calcTax2(1000)}`);
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('***  Function Currying (Partial Application) w/bind  ***');
+console.log('***  Function Currying (Partial Application) w/bind  ');
 console.log('********************************************************');
 
 function createTaxCalculator2(taxRate, amount) {
@@ -40,7 +40,7 @@ console.log(`Tax Amount: ${calcTax4(1000)}`);
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('***      Simple Curried Functions using Closures     ***');
+console.log('***      Simple Curried Functions using Closures     ');
 console.log('********************************************************');
 const multiply = (x, y, z) => x * y * z;
 
@@ -60,7 +60,7 @@ console.log(
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('*** Creating a Private Scope Using an IIFE (old way) ***');
+console.log('*** Creating a Private Scope Using an IIFE');
 console.log('********************************************************');
 
 let var1 = 4;
@@ -74,7 +74,7 @@ let var2 = 3;
 
 console.log('\n \n');
 console.log('********************************************************');
-console.log('***    Creating a Private Scope Using Block Scope    ***');
+console.log('***    Creating a Private Scope Using Block Scope    ');
 console.log('********************************************************');
 
 let var3 = 4;
