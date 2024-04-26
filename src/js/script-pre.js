@@ -89,8 +89,8 @@ function createNavigation() {
   </div>
   `;
 
-  const navBurger = document.querySelector('.navigation__burger');
-  navBurger.focus();
+  // const navBurger = document.querySelector('.navigation__burger');
+  // navBurger.focus();
 }
 
 // MODAL CREATION FUNCTION for ART PAGES
