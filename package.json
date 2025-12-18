@@ -12,14 +12,8 @@
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile:sass": "node-sass src/sass/main.scss assets/css/style.comp.css",
     "prefix:css": "postcss assets/css/style.comp.css --use autoprefixer -o assets/css/style.prefix.css",
-    "prefix2:css": "postcss src/css/app-about-pre.css --use autoprefixer -o assets/css/app-about.prefix.css",
-    "prefix3:css": "postcss src/css/workshop-pre.css --use autoprefixer -o assets/css/workshop.prefix.css",
-    "prefix4:css": "postcss workshop/styles/style-pre.css --use autoprefixer -o workshop/styles/style.prefix.css",
     "compress:css": "node-sass assets/css/style.prefix.css assets/css/style.css --output-style compressed",
-    "compress2:css": "node-sass assets/css/app-about.prefix.css assets/css/app-about.css --output-style compressed",
-    "compress3:css": "node-sass assets/css/workshop.prefix.css assets/css/workshop.css --output-style compressed",
-    "compress4:css": "node-sass workshop/styles/style.prefix.css workshop/styles/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass prefix:css compress:css prefix2:css compress2:css prefix3:css compress3:css prefix4:css compress4:css",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
     "build:webpackdev": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack",
     "build:webpackprod": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --config webpack.config.prod.js",
     "build:dev": "npm-run-all build:css build:webpackdev",
@@ -34,6 +28,7 @@
     "concat": "^1.0.3",
     "node-sass": "^9.0.0",
     "npm-run-all": "^4.1.5",
+    "parcel": "^2.16.3",
     "postcss-cli": "^10.1.0",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
@@ -42,7 +37,7 @@
   "dependencies": {
     "core-js": "^3.32.0",
     "cross-env": "^7.0.3",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.22",
     "regenerator-runtime": "^0.14.0"
   },
   "//comments": {
