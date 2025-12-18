@@ -101,9 +101,15 @@
   z-index: 1000;
 }
 
-.rounded-triangle--1 a span:first-of-type {
+.rounded-triangle--1 a p {
   font-family: 'roboto', sans-serif;
-  line-height: 1.5;
+  line-height: 0.8;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.rounded-triangle--2 div {
+  margin-top: -3.5rem;
 }
 
 .display-none {

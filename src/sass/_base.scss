@@ -45,7 +45,7 @@ main {
 }
 
 .footer {
-  @include animated-gradient-mixin;
+  // @include animated-gradient-mixin;
   margin-top: auto;
   padding: 1.5rem;
   font-family: 'quiche-sans', sans-serif;

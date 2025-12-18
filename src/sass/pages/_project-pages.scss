@@ -25,6 +25,10 @@
   }
 }
 
+@media only screen and (min-width: 1101px) {
+  @include project-desktop-headings;
+}
+
 .click-img {
   margin-bottom: 2.5rem;
   font-weight: 200;
@@ -32,4 +36,34 @@
   color: var(--color-yellow1);
   text-shadow: 0 0.1rem 0.3rem var(--color-text-shadow);
   font-size: var(--fs-click-image);
+}
+
+.contracting__ {
+  &list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+  }
+  &item {
+    margin-top: 3rem;
+    width: 80%;
+    &-grp {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 3rem 2rem 0;
+    }
+  }
+  &img {
+    width: 100%;
+    &[src*='paint-brush-drops'] {
+      aspect-ratio: 1.5/1;
+    }
+    &--small {
+      width: 48%;
+      aspect-ratio: 1.4/1;
+    }
+  }
 }
